@@ -14,14 +14,13 @@ app.Run(async (HttpContext context) =>
 
 
 
-    if (method == "GET") 
-    {
-        if (context.Request.Query.ContainsKey("id")) {
-            string id = context.Request.Query["id"];
-            await context.Response.WriteAsync($"<p style='color: blue; font-size:32px;'>{id}</p> ");
+    
+        if (context.Request.Headers.ContainsKey("User-Agent")) {
+            string userAgent = context.Request.Headers["User-Agent"];
+            await context.Response.WriteAsync($"<p style='color: blue; font-size:32px;'>{userAgent}</p> ");
         }
-    }
-    await context.Response.WriteAsync($"<p style='color: red; font-size:32px;'>{path}</p> ");
+    
+    
  
 });
 
