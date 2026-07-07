@@ -7,21 +7,17 @@ var app = builder.Build();
 
 app.Run(async (HttpContext context) =>
 {
-    //context.Response.StatusCode = 400;
 
-    if(1 == 1)
-    {
-        context.Response.StatusCode = 200;
-        await context.Response.WriteAsync("Success ");
-        
-    } else
-    {
-        context.Response.StatusCode = 400;
-        // response body
-        await context.Response.WriteAsync("Bad ");
-        await context.Response.WriteAsync("Request!!");
 
-    }
+    context.Response.Headers["MyKeY"] = "MY value";
+    context.Response.Headers["Server"] = "My Server[Dev]";
+    context.Response.Headers["Content-Type"] = "text/html";
+
+
+
+
+    await context.Response.WriteAsync("<h1>Hello</h1> ");
+    await context.Response.WriteAsync("<h2>World</h2> ");
 
 
 
