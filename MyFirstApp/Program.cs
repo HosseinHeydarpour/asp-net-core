@@ -15,9 +15,9 @@ app.Run(async (HttpContext context) =>
 
 
     
-        if (context.Request.Headers.ContainsKey("User-Agent")) {
-            string userAgent = context.Request.Headers["User-Agent"];
-            await context.Response.WriteAsync($"<p style='color: blue; font-size:32px;'>{userAgent}</p> ");
+        if (context.Request.Headers.ContainsKey("AuthorizationKey")) {
+            string authorizationKey = context.Request.Headers["AuthorizationKey"];
+            await context.Response.WriteAsync($"<p style='color: blue; font-size:32px;'>{authorizationKey}</p> ");
         }
     
     
