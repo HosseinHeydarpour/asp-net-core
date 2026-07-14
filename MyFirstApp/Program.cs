@@ -19,7 +19,11 @@ app.Use(async (HttpContext context, RequestDelegate next) =>
 
 
 // Middle ware 2
-app.UseMiddleware<MyCustomMiddleware>();
+//app.UseMiddleware<MyCustomMiddleware>();
+// This is an extension method - we used it instead of app.UseMiddleware<MyCustomMiddleware>();
+app.UseMyCustomMiddleware();
+
+
 
 
 // Middleware 3 - app.run is short circut middleware or terminating middleware - it will not send context to next middleware
