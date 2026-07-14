@@ -1,12 +1,24 @@
 ﻿namespace MyFirstApp.CustomMiddleware
 {
 
-    public class MyCustomMiddleware : IMiddleware
+    // This is a way to conver any class to middleware without extendig IMiddleWare interface
+    public class MyCustomMiddleware 
     {
-        public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+
+        private readonly RequestDelegate _next;
+
+        public MyCustomMiddleware(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+
+
+
+        public async Task InvokeAsync(HttpContext context)
         {
             await context.Response.WriteAsync("Hello MIDDLEWARE 2 - Custom \n");
-            await next(context);
+            await _next(context);
             await context.Response.WriteAsync("Hello MIDDLEWARE 2 Back way - Custom \n");
 
         }

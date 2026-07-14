@@ -4,7 +4,6 @@ using System.IO;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddTransient<MyCustomMiddleware>();
 
 
 
@@ -21,7 +20,8 @@ app.Use(async (HttpContext context, RequestDelegate next) =>
 // Middle ware 2
 //app.UseMiddleware<MyCustomMiddleware>();
 // This is an extension method - we used it instead of app.UseMiddleware<MyCustomMiddleware>();
-app.UseMyCustomMiddleware();
+//app.UseMyCustomMiddleware();
+app.UseHelloCustomMiddleware();
 
 
 
