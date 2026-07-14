@@ -1,8 +1,10 @@
 using Microsoft.Extensions.Primitives;
+using MyFirstApp.CustomMiddleware;
 using System.IO;
 
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddTransient<MyCustomMiddleware>();
 
 
 
@@ -15,18 +17,16 @@ app.Use(async (HttpContext context, RequestDelegate next) =>
     await next(context);
 });
 
-// Middleware 2
-app.Use(async (HttpContext context, RequestDelegate next) =>
-{
-    await context.Response.WriteAsync("Hello MIDDLEWARE 2 \n");
-    // await next(context); with this middleware 2 will be the terminating middleware
-});
+
+// Middle ware 2
+app.UseMiddleware<MyCustomMiddleware>();
+
 
 // Middleware 3 - app.run is short circut middleware or terminating middleware - it will not send context to next middleware
 // It terminates the middleware pipe
 app.Run(async (HttpContext context) =>
 {
-    await context.Response.WriteAsync("Hello MIDDLEWARE 3");
+    await context.Response.WriteAsync("Hello MIDDLEWARE 3 \n");
 });
 
 app.Run();
