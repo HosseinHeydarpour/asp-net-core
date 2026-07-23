@@ -12,10 +12,20 @@ app.UseRouting();
 // creating end-points
 app.UseEndpoints(endpoints =>
 {
-    // add your end points - all methods which start with Map
-    endpoints.MapGet("/map1", async (context) => await context.Response.WriteAsync("Map1 Route Enabled"));
+    endpoints.Map("files/{fileName}.{fileExtension}", async context =>
+    {
+        string? fileName = Convert.ToString(context.Request.RouteValues["fileName"]);
+        string? fileExtension = Convert.ToString(context.Request.RouteValues["fileExtension"]);
+        await context.Response.WriteAsync($"In Files | requested file name: '{fileName}' | requested file extension: '{fileExtension}'");
+    });
 
-    endpoints.MapPost("/map2", async (context) => await context.Response.WriteAsync("Map2 Route Enabled"));
+
+    endpoints.Map("employee/profile/{employeeName}", async (context) =>
+    {
+        string? employeeName = Convert.ToString(context.Request.RouteValues["employeeName"]);
+
+        await context.Response.WriteAsync($"In Employee profile | requested employee name: '{employeeName}'");
+    });
 
    
 });
