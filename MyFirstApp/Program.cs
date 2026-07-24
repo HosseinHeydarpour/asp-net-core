@@ -20,11 +20,20 @@ app.UseEndpoints(endpoints =>
     });
 
 
-    endpoints.Map("employee/profile/{employeeName}", async (context) =>
+    endpoints.Map("employee/profile/{employeeName=hossein}", async (context) =>
     {
         string? employeeName = Convert.ToString(context.Request.RouteValues["employeeName"]);
 
         await context.Response.WriteAsync($"In Employee profile | requested employee name: '{employeeName}'");
+    });
+
+    // Eg: products/details/1
+    endpoints.Map("products/details/{prodId=1}", async (context) =>
+    {
+        int? productId = Convert.ToInt32(context.Request.RouteValues["prodId"]);
+
+        await context.Response.WriteAsync($"Here are details about product with ID : {productId}");
+
     });
 
    
