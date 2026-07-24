@@ -20,19 +20,39 @@ app.UseEndpoints(endpoints =>
     });
 
 
-    endpoints.Map("employee/profile/{employeeName=hossein}", async (context) =>
+    endpoints.Map("employee/profile/{employeeName?}", async (context) =>
     {
-        string? employeeName = Convert.ToString(context.Request.RouteValues["employeeName"]);
 
-        await context.Response.WriteAsync($"In Employee profile | requested employee name: '{employeeName}'");
+        if(context.Request.RouteValues.ContainsKey("employeeName"))
+        {
+            string employeeName = Convert.ToString(context.Request.RouteValues["employeeName"]);
+            await context.Response.WriteAsync($"In Employee profile | requested employee name: '{employeeName}'");
+        } else
+        {
+            await context.Response.WriteAsync($"Please provide the employee name...");
+        }
+
+   
+
+    
     });
 
     // Eg: products/details/1
-    endpoints.Map("products/details/{prodId=1}", async (context) =>
+    endpoints.Map("products/details/{prodId?}", async (context) =>
     {
-        int? productId = Convert.ToInt32(context.Request.RouteValues["prodId"]);
+      
 
-        await context.Response.WriteAsync($"Here are details about product with ID : {productId}");
+        if(context.Request.RouteValues.ContainsKey("prodId"))
+        {
+            int productId = Convert.ToInt32(context.Request.RouteValues["prodId"]);
+          
+            await context.Response.WriteAsync($"Details of product with id: {productId}");
+        } else
+        {
+            await context.Response.WriteAsync($"No Id is provided, please provide an ID");
+        }
+
+        
 
     });
 
