@@ -38,7 +38,7 @@ app.UseEndpoints(endpoints =>
     });
 
     // Eg: products/details/1
-    endpoints.Map("products/details/{prodId?}", async (context) =>
+    endpoints.Map("products/details/{prodId:int?}", async (context) =>
     {
       
 
@@ -53,6 +53,15 @@ app.UseEndpoints(endpoints =>
         }
 
         
+
+    });
+
+    // Eg: daily-digest-report/{reportDate}
+    endpoints.Map("daily-digest-report/{reportDate:datetime}",async (context) =>
+    {
+        DateTime reportDate = Convert.ToDateTime(context.Request.RouteValues["reportDate"]);
+
+        await context.Response.WriteAsync($"In daily-digest-report - {reportDate.ToShortDateString()}");
 
     });
 
