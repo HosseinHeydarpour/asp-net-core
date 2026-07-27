@@ -20,7 +20,8 @@ app.UseEndpoints(endpoints =>
     });
 
 
-    endpoints.Map("employee/profile/{employeeName?}", async (context) =>
+    //endpoints.Map("employee/profile/{employeeName:minlength(3):maxlength(7)?}", async (context) =>
+    endpoints.Map("employee/profile/{employeeName:length(3,7):alpha?}", async (context) =>
     {
 
         if(context.Request.RouteValues.ContainsKey("employeeName"))
@@ -38,7 +39,8 @@ app.UseEndpoints(endpoints =>
     });
 
     // Eg: products/details/1
-    endpoints.Map("products/details/{prodId:int?}", async (context) =>
+    //endpoints.Map("products/details/{prodId:int:min(1):max(1000)?}", async (context) =>
+    endpoints.Map("products/details/{prodId:int:range(1,1000)?}", async (context) =>
     {
       
 
@@ -73,12 +75,62 @@ app.UseEndpoints(endpoints =>
         await context.Response.WriteAsync($"City information - {cityId}");
     });
 
-   
+
+
+    // Eg: sales-report/2030/apr : just accept april, july, october, january
+    // The official documetaion suggests not using constraints too much instead accept bad requests 
+    //endpoints.Map("sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}", async context =>
+    //{
+    //    int year = Convert.ToInt32(context.Request.RouteValues["year"]);
+    //    string? month = Convert.ToString(context.Request.RouteValues["month"]);
+
+    //    switch (month)
+    //    {
+    //        case "apr":
+    //           await context.Response.WriteAsync($"Getting April sales report for year: {year} ");
+    //           break;
+    //        case "jul":
+    //            await context.Response.WriteAsync($"Getting July sales report for year: {year} ");
+    //            break;
+    //        case "oct":
+    //            await context.Response.WriteAsync($"Getting October sales report for year: {year} ");
+    //            break;
+    //        case "jan":
+    //            await context.Response.WriteAsync($"Getting January sales report for year: {year} ");
+    //            break;
+
+    //    }
+
+    //});
+
+    // This is the recomended way according to the doccuments - do not use constraints to validate!
+    endpoints.Map("sales-report/{year:int:min(1900)}/{month}", async context =>
+    {
+        int year = Convert.ToInt32(context.Request.RouteValues["year"]);
+        string? month = Convert.ToString(context.Request.RouteValues["month"]).ToLower();
+
+        if(month== "apr" || month == "jul" || month == "oct" || month == "jan")
+        {
+            await context.Response.WriteAsync($"Getting {month} sales report for year: {year} ");
+        } else
+        {
+            if (context.Response.StatusCode == 200)
+            {
+                context.Response.StatusCode = 400;
+            }
+            await context.Response.WriteAsync($"Bad Request... | Only  april, july, october, january are accepted. ");
+        }
+
+    });
+
+
+
+
 });
 
 app.Run(async context =>
 {
-    await context.Response.WriteAsync($"Request recieved at {context.Request.Path}");
+    await context.Response.WriteAsync($"No Route Matched at {context.Request.Path}");
 });
 
 app.Run();
