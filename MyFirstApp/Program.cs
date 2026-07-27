@@ -1,8 +1,15 @@
 using Microsoft.Extensions.Primitives;
+using MyFirstApp.CustomConstraints;
 using System.IO;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddRouting(options =>
+{
+    options.ConstraintMap.Add("months",typeof(MonthsCustomConstraint));
+});
+
 var app = builder.Build();
 
 
@@ -104,7 +111,7 @@ app.UseEndpoints(endpoints =>
     //});
 
     // This is the recomended way according to the doccuments - do not use constraints to validate!
-    endpoints.Map("sales-report/{year:int:min(1900)}/{month}", async context =>
+    endpoints.Map("sales-report/{year:int:min(1900)}/{month:months}", async context =>
     {
         int year = Convert.ToInt32(context.Request.RouteValues["year"]);
         string? month = Convert.ToString(context.Request.RouteValues["month"]).ToLower();
