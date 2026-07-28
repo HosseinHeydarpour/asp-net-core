@@ -131,6 +131,13 @@ app.UseEndpoints(endpoints =>
     });
 
 
+    // sales-report/2024/jan
+    // This route has precedence over the above route
+    endpoints.Map("sales-report/2024/jan", async context =>
+    {
+        await context.Response.WriteAsync("Sales report exclusively for 2024 - jan");
+    });
+
 
 
 });
