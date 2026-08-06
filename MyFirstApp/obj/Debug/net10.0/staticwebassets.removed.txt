@@ -1,2 +1,0 @@
-D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\docs.pdf
-D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\Sample.txt

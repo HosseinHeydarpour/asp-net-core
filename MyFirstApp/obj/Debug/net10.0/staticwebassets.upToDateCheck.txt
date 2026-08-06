@@ -1,3 +1,4 @@
+wwwroot\img.jpg
 wwwroot\docs.pdf
 wwwroot\Sample.txt
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\Sample.txt

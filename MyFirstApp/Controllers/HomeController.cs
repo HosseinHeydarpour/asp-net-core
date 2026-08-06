@@ -59,5 +59,43 @@ namespace MyFirstApp.Controllers
         {
             return "Hello from Contact";
         }
+
+
+        [Route("file-download")]
+        // we use virtual file result if file is present in wwwroot folder
+        public VirtualFileResult FileDownload()
+        {
+            // return new VirtualFileResult("/docs.pdf","application/pdf");
+
+
+            // Shortcut
+            return File("/docs.pdf", "application/pdf");
+        }
+
+
+        [Route("file-download2")]
+        // This is not a good practice - virtaul file result is a better choice
+        public PhysicalFileResult PhysicalFileResult()
+        {
+            // return new PhysicalFileResult(@"D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\Sample.txt", "text/plain");
+
+
+            // Shortcut
+            return PhysicalFile(@"D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\Sample.txt", "text/plain");
+        }
+
+        [Route("file-download3")]
+        // Very useful when you want to read imgaes from DB
+        public FileContentResult FileContentResult()
+        {
+            byte[] bytes = System.IO.File.ReadAllBytes(@"D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\img.jpg");
+
+            // return new FileContentResult(bytes, "text/plain");
+
+            // Shortcut
+            return File(bytes, "image/jpeg");
+        }
+
+
     }
 }

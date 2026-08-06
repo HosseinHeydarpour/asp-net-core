@@ -29,3 +29,4 @@ D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.genr
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\ref\MyFirstApp.dll
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.sourcelink.json
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.staticwebassets.runtime.json
+D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\compressed\4lth7hqyye-{0}-l7o7indy9f-l7o7indy9f.gz
