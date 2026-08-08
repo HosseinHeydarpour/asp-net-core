@@ -69,11 +69,36 @@ namespace MyFirstApp.Controllers
             //return File($"/docs.pdf", "application/pdf");
 
             // Pay attention when we pass StoreController we omit the Controller part
-            //
-            // RedirectToActionResult(actionName, ControllerName, route values, permanant => by default it is false)
-            //return new RedirectToActionResult("Books", "Store", new { }); // 302 - Found
+
+            //====================
             // 302 means temp redirection - 302 means permanant redirection
-            return new RedirectToActionResult("Books", "Store", new { }, permanent:true); // 301 - Found --> when permamant set to true - Moved permanently
+            // RedirectToActionResult(actionName, ControllerName, route values, permanant => by default it is false)
+            // return new RedirectToActionResult("Books", "Store", new { }); // 302 - Found
+            // return RedirectToAction("Books", "Store", new {id = bookId}); // short-cut for return new RedirectToActionResult("Books", "Store", new { });
+            //====================
+
+
+
+            //====================
+            // return new RedirectToActionResult("Books", "Store", new { }, permanent:true); // 301 - Found --> when permamant set to true - Moved permanently
+            // return RedirectToActionPermanent("Books", "Store", new { id = bookId }); // 302 short-cut for new RedirectToActionResult("Books", "Store", new { }, permanent:true); 
+            //====================
+
+
+            //====================
+            // The URL from the same application - you cannot redirect from one application to another app
+            // return new LocalRedirectResult($"/store/books/{bookId}", true);
+            // return LocalRedirect($"/store/books/{bookId}"); // Shortcut for return new LocalRedirectResult($"/store/books/{bookId}");
+            // return LocalRedirectPermanent($"/store/books/{bookId}"); // Shortcut for return new LocalRedirectResult($"/store/books/{bookId}", true); - moved permanently
+            //====================
+
+
+            //====================
+            //return Redirect($"/store/books/{bookId}"); // 302 - Found
+            return RedirectPermanent($"/store/books/{bookId}");
+
+
+
         }
     }
 }
