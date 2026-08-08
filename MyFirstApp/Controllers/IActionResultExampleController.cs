@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace MyFirstApp.Controllers
 {
     public class IActionResultExampleController : Controller
     {
 
-        [Route("store/books")]
+        [Route("bookstore")]
         // public ContentResult Index() - this definition of  the method gives us an error when returning the file content 
         public IActionResult Index()
         {
@@ -63,9 +64,16 @@ namespace MyFirstApp.Controllers
             }
 
 
-            
 
-            return File($"/docs.pdf", "application/pdf");
+
+            //return File($"/docs.pdf", "application/pdf");
+
+            // Pay attention when we pass StoreController we omit the Controller part
+            //
+            // RedirectToActionResult(actionName, ControllerName, route values, permanant => by default it is false)
+            //return new RedirectToActionResult("Books", "Store", new { }); // 302 - Found
+            // 302 means temp redirection - 302 means permanant redirection
+            return new RedirectToActionResult("Books", "Store", new { }, permanent:true); // 301 - Found --> when permamant set to true - Moved permanently
         }
     }
 }
