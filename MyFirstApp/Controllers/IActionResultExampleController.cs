@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using static System.Reflection.Metadata.BlobBuilder;
 
 namespace MyFirstApp.Controllers
@@ -6,11 +7,12 @@ namespace MyFirstApp.Controllers
     public class IActionResultExampleController : Controller
     {
 
-        [Route("bookstore")]
+        [Route("bookstore/{bookid:int?}/{isloggedin:bool?}")]
         // public ContentResult Index() - this definition of  the method gives us an error when returning the file content 
-        public IActionResult Index()
+        //public IActionResult Index([FromRoute]int? bookid, [FromRoute]bool? isloggedin)
+        public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin)
         {
-            if (!Request.Query.ContainsKey("bookid"))
+            if (bookid.HasValue == false)
             {
                 //=================
                 //Response.StatusCode = 400;
@@ -21,37 +23,27 @@ namespace MyFirstApp.Controllers
                 return BadRequest("Book id is not supplied!");
             }
 
-            // Book id cannot be empty!
-            if (string.IsNullOrEmpty(Convert.ToString(Request.Query["bookid"])))
-            {
-                //Response.StatusCode = 400;
-
-                //return Content("Book id cannot be null or empty!");
-
-
-                return BadRequest("Book id cannot be null or empty!");
-            }
 
             // Book id cannot be over 1000
-            int bookId = Convert.ToInt32(ControllerContext.HttpContext.Request.Query["bookid"]);
-            if (bookId > 1000 )
+       
+            if (bookid > 1000 )
             {
                 //Response.StatusCode = 400;
 
                 //return Content("Book id cannot be over 1000 or below 0! It must be 1 and 1000");
 
-                return NotFound($"Book with id: {bookId} not found :( ");
+                return NotFound($"Book with id: {bookid} not found :( ");
 
             } 
-            if(bookId <= 0)
+            if(bookid <= 0)
             {
                 return BadRequest("Book id cannot be negative or 0! It must be 1 and 1000");
             }
 
 
             // isloggedin should be true
-            bool isUserLoggedIn = Convert.ToBoolean(Request.Query["isloggedin"]);
-            if (!isUserLoggedIn) 
+         
+            if (isloggedin == false) 
             {
                 //Response.StatusCode = 401;
 
@@ -66,36 +58,8 @@ namespace MyFirstApp.Controllers
 
 
 
-            //return File($"/docs.pdf", "application/pdf");
-
-            // Pay attention when we pass StoreController we omit the Controller part
-
-            //====================
-            // 302 means temp redirection - 302 means permanant redirection
-            // RedirectToActionResult(actionName, ControllerName, route values, permanant => by default it is false)
-            // return new RedirectToActionResult("Books", "Store", new { }); // 302 - Found
-            // return RedirectToAction("Books", "Store", new {id = bookId}); // short-cut for return new RedirectToActionResult("Books", "Store", new { });
-            //====================
-
-
-
-            //====================
-            // return new RedirectToActionResult("Books", "Store", new { }, permanent:true); // 301 - Found --> when permamant set to true - Moved permanently
-            // return RedirectToActionPermanent("Books", "Store", new { id = bookId }); // 302 short-cut for new RedirectToActionResult("Books", "Store", new { }, permanent:true); 
-            //====================
-
-
-            //====================
-            // The URL from the same application - you cannot redirect from one application to another app
-            // return new LocalRedirectResult($"/store/books/{bookId}", true);
-            // return LocalRedirect($"/store/books/{bookId}"); // Shortcut for return new LocalRedirectResult($"/store/books/{bookId}");
-            // return LocalRedirectPermanent($"/store/books/{bookId}"); // Shortcut for return new LocalRedirectResult($"/store/books/{bookId}", true); - moved permanently
-            //====================
-
-
-            //====================
-            //return Redirect($"/store/books/{bookId}"); // 302 - Found
-            return RedirectPermanent($"/store/books/{bookId}");
+            
+            return Content($"Book with id: {bookid}");
 
 
 
