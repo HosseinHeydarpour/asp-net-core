@@ -1,0 +1,77 @@
+[
+  {
+    "AccountNumber": 1001,
+    "HolderName": "John Doe",
+    "CurrentBalance": 5400
+  },
+  {
+    "AccountNumber": 1002,
+    "HolderName": "Jane Smith",
+    "CurrentBalance": 12500
+  },
+  {
+    "AccountNumber": 1003,
+    "HolderName": "Michael Johnson",
+    "CurrentBalance": 3200
+  },
+  {
+    "AccountNumber": 1004,
+    "HolderName": "Emily Davis",
+    "CurrentBalance": 8900
+  },
+  {
+    "AccountNumber": 1005,
+    "HolderName": "David Wilson",
+    "CurrentBalance": 1500
+  },
+  {
+    "AccountNumber": 1006,
+    "HolderName": "Sarah Martinez",
+    "CurrentBalance": 24300
+  },
+  {
+    "AccountNumber": 1007,
+    "HolderName": "James Taylor",
+    "CurrentBalance": 450
+  },
+  {
+    "AccountNumber": 1008,
+    "HolderName": "Amanda Anderson",
+    "CurrentBalance": 6700
+  },
+  {
+    "AccountNumber": 1009,
+    "HolderName": "Robert Thomas",
+    "CurrentBalance": 11200
+  },
+  {
+    "AccountNumber": 1010,
+    "HolderName": "Lisa Jackson",
+    "CurrentBalance": 7800
+  },
+  {
+    "AccountNumber": 1011,
+    "HolderName": "William White",
+    "CurrentBalance": 31000
+  },
+  {
+    "AccountNumber": 1012,
+    "HolderName": "Megan Harris",
+    "CurrentBalance": 950
+  },
+  {
+    "AccountNumber": 1013,
+    "HolderName": "Christopher Martin",
+    "CurrentBalance": 14200
+  },
+  {
+    "AccountNumber": 1014,
+    "HolderName": "Jessica Thompson",
+    "CurrentBalance": 5300
+  },
+  {
+    "AccountNumber": 1015,
+    "HolderName": "Daniel Garcia",
+    "CurrentBalance": 18600
+  }
+]
