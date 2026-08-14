@@ -5,7 +5,7 @@ namespace MyFirstApp.Models
     public class Person
     {
 
-        [Required]
+        [Required(ErrorMessage = "Please provide the name - Person name cannot be empty or null")]
         public string? PersonName { get; set; }
 
         public string? Email { get; set; }
