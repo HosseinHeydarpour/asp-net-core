@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using static System.Reflection.Metadata.BlobBuilder;
+using MyFirstApp.Models;
 
 namespace MyFirstApp.Controllers
 {
@@ -10,7 +10,7 @@ namespace MyFirstApp.Controllers
         [Route("bookstore/{bookid:int?}/{isloggedin:bool?}")]
         // public ContentResult Index() - this definition of  the method gives us an error when returning the file content 
         //public IActionResult Index([FromRoute]int? bookid, [FromRoute]bool? isloggedin)
-        public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin)
+        public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)
         {
             if (bookid.HasValue == false)
             {
@@ -59,7 +59,7 @@ namespace MyFirstApp.Controllers
 
 
             
-            return Content($"Book with id: {bookid}");
+            return Content($"Book with id: {bookid}, Book: {book}", "text/plain");
 
 
 
