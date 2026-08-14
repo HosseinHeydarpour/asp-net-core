@@ -10,7 +10,7 @@ namespace MyFirstApp.Controllers
         [Route("bookstore/{bookid:int?}/{isloggedin:bool?}")]
         // public ContentResult Index() - this definition of  the method gives us an error when returning the file content 
         //public IActionResult Index([FromRoute]int? bookid, [FromRoute]bool? isloggedin)
-        public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)
+        public IActionResult Index( int? bookid, [FromRoute] bool? isloggedin, Book book)
         {
             if (bookid.HasValue == false)
             {

@@ -4,10 +4,10 @@ namespace MyFirstApp.Models
 {
     public class Book
     {
-        [FromQuery]
+        // [FromQuery]
         public int? BookId { get; set; } // BookId will be set from query string and not route data
 
-        [FromRoute]
+        // [FromRoute]
         public string? Author { get; set; }
 
         public override string ToString()
