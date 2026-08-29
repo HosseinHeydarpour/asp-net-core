@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using MyFirstApp.CustomValidators;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyFirstApp.Models
@@ -31,6 +32,10 @@ namespace MyFirstApp.Models
         [Range(0, 999.99, ErrorMessage = "{0} should be between ${1} and ${2}")]
         public double? Price { get; set; }
 
+        //[MinimumYearValidator(2005,ErrorMessage = "Date of Birth should not be newer than jan 1. {0}")]
+        [MinimumYearValidator(2005)]
+        public DateTime? DateOfBirth { get; set; }
+
 
 
         public override string ToString()
@@ -47,6 +52,7 @@ namespace MyFirstApp.Models
              Price:            {(Price.HasValue ? Price.Value.ToString("C") : "N/A")}
              Password:         {maskedPassword}
              Confirm Password: {maskedConfirmPassword}
+             Date Of Birth: {DateOfBirth }
            """;
         }
     }
