@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyFirstApp.Models
 {
-    public class Person
+    public class Person : IValidatableObject
     {
 
         [Required(ErrorMessage = "{0} cannot be empty or null")]
@@ -42,6 +42,7 @@ namespace MyFirstApp.Models
         [DateRangeValidator("FromDate", ErrorMessage = "'FromDate' should be older than or equal to 'ToDate'")]
         public DateTime? ToDate { get; set; }
 
+        public int? Age { get; set; }
 
 
 
@@ -63,5 +64,27 @@ namespace MyFirstApp.Models
              Date Of Birth: {DateOfBirth }
            """;
         }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (!DateOfBirth.HasValue && !Age.HasValue) 
+            {
+                // Comment for AI: explain the yeild keyword in c# here 
+                //
+                // Explain
+                //
+
+                yield return new ValidationResult("Either of Date of Birth or Age must be supplied", new[] { nameof(Age) });
+            }
+
+
+            // you can return more than one value
+
+
+
+        }
+
+
+        
     }
 }
