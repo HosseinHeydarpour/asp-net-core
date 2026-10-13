@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using MyFirstApp.CustomValidators;
 using System.ComponentModel.DataAnnotations;
 
@@ -34,6 +35,7 @@ namespace MyFirstApp.Models
 
         //[MinimumYearValidator(2005,ErrorMessage = "Date of Birth should not be newer than jan 1. {0}")]
         [MinimumYearValidator(2005)]
+        [BindNever] // Excluded from model binding regardless of incoming HTTP data
         public DateTime? DateOfBirth { get; set; }
 
         

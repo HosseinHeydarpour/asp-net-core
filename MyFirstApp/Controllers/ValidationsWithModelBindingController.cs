@@ -7,14 +7,16 @@ namespace MyFirstApp.Controllers
     {
 
         [Route("/register")]
-        public IActionResult Index(Person person)
+        public IActionResult Index([Bind(nameof(Person.PersonName), nameof(Person.Email), nameof(Person.Password), nameof(Person.ConfirmPassword))]
+Person person)
         {
+
             //if (string.IsNullOrEmpty(person.PersonName))
             //{
             //    return BadRequest("Person Name is not provided");
             //}
 
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 //List<string> errorList = new List<string>();
                 //foreach (var val in ModelState.Values)
