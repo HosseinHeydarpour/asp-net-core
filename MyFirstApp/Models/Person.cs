@@ -35,7 +35,7 @@ namespace MyFirstApp.Models
 
         //[MinimumYearValidator(2005,ErrorMessage = "Date of Birth should not be newer than jan 1. {0}")]
         [MinimumYearValidator(2005)]
-        [BindNever]
+        //[BindNever]
         // FIX: [BindNever] excluded this property from model binding, so the posted
         // DateOfBirth was never read and IValidatableObject always raised
         // "Either of Date of Birth or Age must be supplied".

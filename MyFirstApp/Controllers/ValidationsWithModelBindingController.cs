@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyFirstApp.CustomeModelBinders;
 using MyFirstApp.Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace MyFirstApp.Controllers
@@ -6,10 +7,14 @@ namespace MyFirstApp.Controllers
     public class ValidationsWithModelBindingController : Controller
     {
 
+        //[Route("/register")]
+        // public IActionResult Index([Bind(nameof(Person.PersonName), nameof(Person.Email), nameof(Person.Password), nameof(Person.ConfirmPassword))]
+        //Person person)
+
+
+        // Example JSON: {"PersonName": "William", "Email": "william@example.com", "Phone": "123456", "Password":"william123", "ConfirmPassword": "william123"}
         [Route("/register")]
-            // public IActionResult Index([Bind(nameof(Person.PersonName), nameof(Person.Email), nameof(Person.Password), nameof(Person.ConfirmPassword))]
-            //Person person)
-            public IActionResult Index(Person person)
+        public IActionResult Index([FromBody] [ModelBinder(BinderType = typeof(PersonModelBinder))] Person person)
         {
             //if (string.IsNullOrEmpty(person.PersonName))
             //{
