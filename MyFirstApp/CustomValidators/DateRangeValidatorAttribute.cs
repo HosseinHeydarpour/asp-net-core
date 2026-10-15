@@ -15,37 +15,43 @@ namespace MyFirstApp.CustomValidators
 
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
-            if(value != null)
+            // FIX: if ToDate is not supplied there is nothing to compare -> validation passes.
+            // Returning plain null here makes ASP.NET Core treat the field as INVALID.
+            if (value == null)
             {
-                // Get to datea
-                DateTime toDate = Convert.ToDateTime(value);
-
-
-
-            
-
-                // Using reflection - get from date
-                PropertyInfo? otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);
-
-                if (otherProperty != null)
-                {
-                    // ObjectInstance refers to the model object
-                    DateTime fromDate = Convert.ToDateTime(otherProperty.GetValue(validationContext.ObjectInstance));
-
-
-                    if (fromDate > toDate)
-                    {
-                        return new ValidationResult(ErrorMessage, new string[] { OtherPropertyName, validationContext.MemberName });
-                    } else
-                    {
-                        return ValidationResult.Success;
-                    }
-                } 
-
-                 
+                return ValidationResult.Success;
             }
 
-            return null;
+            // Get to date
+            DateTime toDate = Convert.ToDateTime(value);
+
+            // Using reflection - get from date
+            PropertyInfo? otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);
+
+            if (otherProperty == null)
+            {
+                return ValidationResult.Success;
+            }
+
+            // ObjectInstance refers to the model object
+            object? rawFromDate = otherProperty.GetValue(validationContext.ObjectInstance);
+
+            // If FromDate was not bound, skip the cross-field check
+            if (rawFromDate == null)
+            {
+                return ValidationResult.Success;
+            }
+
+            DateTime fromDate = Convert.ToDateTime(rawFromDate);
+
+            if (fromDate > toDate)
+            {
+                return new ValidationResult(
+                    ErrorMessage ?? $"'{OtherPropertyName}' should be older than or equal to '{validationContext.MemberName}'",
+                    new[] { OtherPropertyName, validationContext.MemberName! });
+            }
+
+            return ValidationResult.Success;
         }
     }
 }

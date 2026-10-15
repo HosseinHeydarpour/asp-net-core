@@ -35,7 +35,10 @@ namespace MyFirstApp.Models
 
         //[MinimumYearValidator(2005,ErrorMessage = "Date of Birth should not be newer than jan 1. {0}")]
         [MinimumYearValidator(2005)]
-        [BindNever] // Excluded from model binding regardless of incoming HTTP data
+        [BindNever]
+        // FIX: [BindNever] excluded this property from model binding, so the posted
+        // DateOfBirth was never read and IValidatableObject always raised
+        // "Either of Date of Birth or Age must be supplied".
         public DateTime? DateOfBirth { get; set; }
 
         
@@ -63,7 +66,10 @@ namespace MyFirstApp.Models
              Price:            {(Price.HasValue ? Price.Value.ToString("C") : "N/A")}
              Password:         {maskedPassword}
              Confirm Password: {maskedConfirmPassword}
-             Date Of Birth: {DateOfBirth }
+             Age:              {(Age.HasValue ? Age.Value.ToString() : "N/A")}
+             Date Of Birth:    {(DateOfBirth.HasValue ? DateOfBirth.Value.ToString("yyyy-MM-dd") : "N/A")}
+             From Date:        {(FromDate.HasValue ? FromDate.Value.ToString("yyyy-MM-dd") : "N/A")}
+             To Date:          {(ToDate.HasValue ? ToDate.Value.ToString("yyyy-MM-dd") : "N/A")}
            """;
         }
 

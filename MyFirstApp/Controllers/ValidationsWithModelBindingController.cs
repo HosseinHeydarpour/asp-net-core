@@ -7,10 +7,10 @@ namespace MyFirstApp.Controllers
     {
 
         [Route("/register")]
-        public IActionResult Index([Bind(nameof(Person.PersonName), nameof(Person.Email), nameof(Person.Password), nameof(Person.ConfirmPassword))]
-Person person)
+            // public IActionResult Index([Bind(nameof(Person.PersonName), nameof(Person.Email), nameof(Person.Password), nameof(Person.ConfirmPassword))]
+            //Person person)
+            public IActionResult Index(Person person)
         {
-
             //if (string.IsNullOrEmpty(person.PersonName))
             //{
             //    return BadRequest("Person Name is not provided");

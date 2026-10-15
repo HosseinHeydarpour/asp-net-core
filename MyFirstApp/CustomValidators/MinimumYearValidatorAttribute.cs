@@ -26,13 +26,17 @@ namespace MyFirstApp.CustomValidators
             if (value != null)
             {
                 DateTime date = (DateTime)value;
-                if (date.Year >= MinimumYear)
+
+                // FIX: the condition was inverted - validation must FAIL when the year
+                // is LESS than MinimumYear, and SUCCEED when it is greater or equal.
+                if (date.Year < MinimumYear)
                 {
                     // In order to string formatting start working in model class
                     return new ValidationResult(string.Format(ErrorMessage ?? DefaultErrorMessage, MinimumYear));
-                } else
+                }
+                else
                 {
-                    // WHEN YEAR IS LESS THAn 2000
+                    // Year is acceptable
                     return ValidationResult.Success;
                 }
             }
