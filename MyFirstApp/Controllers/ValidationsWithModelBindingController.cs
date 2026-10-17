@@ -16,23 +16,13 @@ namespace MyFirstApp.Controllers
         [Route("/register")]
         //public IActionResult Index([FromBody] [ModelBinder(BinderType = typeof(PersonModelBinder))] Person person)
         // We have model binder provider for Person now
-        public IActionResult Index(Person person)
+        public IActionResult Index(Person person, [FromHeader(Name = "User-Agent")]string UserAgent)
         {
-            //if (string.IsNullOrEmpty(person.PersonName))
-            //{
-            //    return BadRequest("Person Name is not provided");
-            //}
+          
 
             if (!ModelState.IsValid)
             {
-                //List<string> errorList = new List<string>();
-                //foreach (var val in ModelState.Values)
-                //{
-                //    foreach (var error in val.Errors)
-                //    {
-                //        errorList.Add(error.ErrorMessage);
-                //    } 
-                //}
+         
 
                 List<string> errorList  =  ModelState.Values.SelectMany(value => value.Errors).Select(err => err.ErrorMessage).ToList();
 
@@ -41,10 +31,12 @@ namespace MyFirstApp.Controllers
 
                 return BadRequest(errors);
 
-            } else
-            {
-                return Content($"{person}");
             }
+
+                // This is the way you can retrive from request headers - but this is lengthy
+                // ControllerContext.HttpContext.Request.Headers["key"]
+                return Content($"{person}, {UserAgent}");
+            
 
 
             
