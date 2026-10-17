@@ -14,7 +14,9 @@ namespace MyFirstApp.Controllers
 
         // Example JSON: {"PersonName": "William", "Email": "william@example.com", "Phone": "123456", "Password":"william123", "ConfirmPassword": "william123"}
         [Route("/register")]
-        public IActionResult Index([FromBody] [ModelBinder(BinderType = typeof(PersonModelBinder))] Person person)
+        //public IActionResult Index([FromBody] [ModelBinder(BinderType = typeof(PersonModelBinder))] Person person)
+        // We have model binder provider for Person now
+        public IActionResult Index(Person person)
         {
             //if (string.IsNullOrEmpty(person.PersonName))
             //{
