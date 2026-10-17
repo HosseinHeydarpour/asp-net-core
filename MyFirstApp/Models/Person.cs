@@ -50,6 +50,8 @@ namespace MyFirstApp.Models
         public int? Age { get; set; }
 
 
+        public List<string?> Tags { get; set; } = new List<string?>();
+
 
 
         public override string ToString()
