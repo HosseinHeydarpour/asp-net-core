@@ -16,7 +16,7 @@ namespace MyFirstApp.Controllers
         [Route("/register")]
         //public IActionResult Index([FromBody] [ModelBinder(BinderType = typeof(PersonModelBinder))] Person person)
         // We have model binder provider for Person now
-        public IActionResult Index(Person person, [FromHeader(Name = "User-Agent")]string UserAgent)
+        public IActionResult Index([FromBody]Person person)
         {
           
 
@@ -35,7 +35,7 @@ namespace MyFirstApp.Controllers
 
                 // This is the way you can retrive from request headers - but this is lengthy
                 // ControllerContext.HttpContext.Request.Headers["key"]
-                return Content($"{person}, {UserAgent}");
+                return Content($"{person}");
             
 
 
