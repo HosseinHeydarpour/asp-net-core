@@ -9,8 +9,10 @@
     Person person = new Person() 
     { 
         Name="John Smith",
-       DateOfBirth= null
+       DateOfBirth= null,
        // DateOfBirth = Convert.ToDateTime("1998-03-20")
+       PersonGender = null
+          // PersonGender = Gender.Other
     };
 }
 
@@ -30,6 +32,28 @@
         else {
             <h3>Date of birth is not defined</h3>
         }
-   
+
+
+
+        @switch (person.PersonGender)
+        {
+            case (Gender.Male):
+                <p>Happy man's day!</p>
+                ; 
+                break;
+            case (Gender.Female):
+                <p>Happy womans day</p>                        
+                ;
+                break;
+            case (Gender.Other):
+                <p>Gender is not defined by user</p>                        
+                ;
+                break;
+            default: 
+                <p>Default message</p>                        
+                ;
+                break;
+        }
+
     </body>
 </html>
