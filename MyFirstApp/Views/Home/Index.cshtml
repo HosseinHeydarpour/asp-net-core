@@ -28,6 +28,12 @@
             {
 
                 Person person = people[i];
+                
+                // This wont get treated as C# code anymore
+                <text>Hello TO</text>
+
+                @:This is another way to show static text in a block
+
                 if (i % 2 != 0)
                 {
                 <p style="color:red;">@person.Name | @person.DateOfBirth.Value | @person.PersonGender</p>
