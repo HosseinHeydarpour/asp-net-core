@@ -15,7 +15,7 @@
 
 }
 
-@functions{
+@{
     // this is a method because we used functions keyword after @
     double? GetAge(DateTime? dateOfBirth){
         if(dateOfBirth is null)
@@ -31,7 +31,9 @@
     int x = 10;
 
     // Property
-    string Name { get; set; } = "First app";
+    // string Name { get; set; } = "First app";
+
+    string alertMessage = $"<script>alert('{people.Count} people found')</script>";
 }
 
 <!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,7 +42,8 @@
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>@welcomeMessage to @Name</h1>
+        @Html.Raw(alertMessage)
+        @* <h1>@welcomeMessage to @Name</h1> *@
         
         <div>
         @for(int i=0; i<people.Count; i++)
