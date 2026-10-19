@@ -22,28 +22,25 @@
     </head>
     <body>
         <h1>@welcomeMessage</h1>
-        <table>
-            <thead>
-                <th>Name</th>
-                <th>Date Of Birth</th>
-                <th>Gender</th>
-            </thead>
-            <tbody>
-                @foreach (Person person in people)
+        
+        <div>
+        @for(int i=0; i<people.Count; i++)
+            {
+
+                Person person = people[i];
+                if (i % 2 != 0)
                 {
-                    <tr>
-                        <td>@person.Name</td>
-                        @if(@person.DateOfBirth is null){
-                            <td>Not Defined</td>
-                        } else
-                         {
-                            <td>@person.DateOfBirth.Value.Year</td>
-                        }
-                        <td>@person.PersonGender</td>
-                    </tr>
+                <p style="color:red;">@person.Name | @person.DateOfBirth.Value | @person.PersonGender</p>
+
+                } else
+                {
+                <p style="color:blue;">@person.Name | @person.DateOfBirth.Value | @person.PersonGender</p>
                 }
-        </tbody>
-        </table>
+
+            }
+
+
+        </div>
 
     </body>
 </html>
