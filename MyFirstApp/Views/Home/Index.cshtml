@@ -1,9 +1,25 @@
-﻿<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
+﻿
+@using MyFirstApp.Models
+
+@{
+    string appTitle = "Asp.Net Core App";
+    string welcomeMessage = "Welcome";
+
+
+    Person person = new Person() { Name="John Smith", DateOfBirth=Convert.ToDateTime("1998-03-20") };
+}
+
+<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Asp.Net Core</title> 
+        <title>@appTitle</title> 
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>Welcome Back</h1>
+        <h1>@welcomeMessage</h1>
+        <h2>Hello @person.Name</h2>
+        @{
+        double age = Math.Round (   (DateTime.Now - person.DateOfBirth).TotalDays / 365.25);
+        }
+        <h3>Your age is: @age</h3>
     </body>
 </html>

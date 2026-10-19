@@ -6,6 +6,7 @@ namespace MyFirstApp.Controllers
     {
 
         [Route("home")]
+        [Route("/")]
         public IActionResult Index()
         {
             // this is not used in real world
