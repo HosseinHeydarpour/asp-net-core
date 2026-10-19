@@ -6,15 +6,14 @@
     string welcomeMessage = "Welcome";
 
 
-    Person person = new Person() 
-    { 
-        Name="John Smith",
-       DateOfBirth= null,
-       // DateOfBirth = Convert.ToDateTime("1998-03-20")
-       PersonGender = null
-          // PersonGender = Gender.Other
+    List<Person> people = new List<Person>()
+    {
+        new Person() { Name = "John", DateOfBirth = Convert.ToDateTime("2000-03-02"), PersonGender=Gender.Male },
+        new Person() { Name = "Pam", DateOfBirth = Convert.ToDateTime("2001-04-22"), PersonGender=Gender.Female },
+        new Person() { Name = "Al", DateOfBirth = Convert.ToDateTime("1998-03-12"), PersonGender=Gender.Other }
     };
-}
+
+   }
 
 <!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -23,37 +22,28 @@
     </head>
     <body>
         <h1>@welcomeMessage</h1>
-        <h2>Hello @person.Name</h2>
-    @if (person.DateOfBirth.HasValue)
-        {
-            double age = Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25);
-            <h3>Your age is: @age</h3>
-        }
-        else {
-            <h3>Date of birth is not defined</h3>
-        }
-
-
-
-        @switch (person.PersonGender)
-        {
-            case (Gender.Male):
-                <p>Happy man's day!</p>
-                ; 
-                break;
-            case (Gender.Female):
-                <p>Happy womans day</p>                        
-                ;
-                break;
-            case (Gender.Other):
-                <p>Gender is not defined by user</p>                        
-                ;
-                break;
-            default: 
-                <p>Default message</p>                        
-                ;
-                break;
-        }
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+            </thead>
+            <tbody>
+                @foreach (Person person in people)
+                {
+                    <tr>
+                        <td>@person.Name</td>
+                        @if(@person.DateOfBirth is null){
+                            <td>Not Defined</td>
+                        } else
+                         {
+                            <td>@person.DateOfBirth.Value.Year</td>
+                        }
+                        <td>@person.PersonGender</td>
+                    </tr>
+                }
+        </tbody>
+        </table>
 
     </body>
 </html>
