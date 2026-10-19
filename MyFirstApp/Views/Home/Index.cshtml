@@ -13,7 +13,26 @@
         new Person() { Name = "Al", DateOfBirth = Convert.ToDateTime("1998-03-12"), PersonGender=Gender.Other }
     };
 
-   }
+}
+
+@functions{
+    // this is a method because we used functions keyword after @
+    double? GetAge(DateTime? dateOfBirth){
+        if(dateOfBirth is null)
+        {
+            return null;
+        } else
+        {
+            return  Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
+        }
+    }
+
+    // this is a field
+    int x = 10;
+
+    // Property
+    string Name { get; set; } = "First app";
+}
 
 <!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -21,7 +40,7 @@
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>@welcomeMessage</h1>
+        <h1>@welcomeMessage to @Name</h1>
         
         <div>
         @for(int i=0; i<people.Count; i++)
@@ -30,17 +49,18 @@
                 Person person = people[i];
                 
                 // This wont get treated as C# code anymore
-                <text>Hello TO</text>
-
-                @:This is another way to show static text in a block
+                @* <span>If it is between html tag it wont get treated as C# code</span> *@
+                @* this is a razor comment *@
+                @* <text>Hello TO</text> *@
+                @* @:This is another way to show static text in a block *@
 
                 if (i % 2 != 0)
                 {
-                <p style="color:red;">@person.Name | @person.DateOfBirth.Value | @person.PersonGender</p>
+                <p style="color:red;">@person.Name | @GetAge(person.DateOfBirth) years old | @person.PersonGender</p>
 
                 } else
                 {
-                <p style="color:blue;">@person.Name | @person.DateOfBirth.Value | @person.PersonGender</p>
+                <p style="color:blue;">@person.Name | @GetAge(person.DateOfBirth) years old | @person.PersonGender</p>
                 }
 
             }
