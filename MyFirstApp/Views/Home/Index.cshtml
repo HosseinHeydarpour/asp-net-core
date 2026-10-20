@@ -1,55 +1,32 @@
 ﻿
 @using MyFirstApp.Models
 
-@{
-    string appTitle = "Asp.Net Core App";
-    string welcomeMessage = "Welcome";
 
 
-    List<Person> people = new List<Person>()
-    {
-        new Person() { Name = "John", DateOfBirth = Convert.ToDateTime("2000-03-02"), PersonGender=Gender.Male },
-        new Person() { Name = "Pam", DateOfBirth = Convert.ToDateTime("2001-04-22"), PersonGender=Gender.Female },
-        new Person() { Name = "Al", DateOfBirth = Convert.ToDateTime("1998-03-12"), PersonGender=Gender.Other }
-    };
 
-}
-
-@{
-    // this is a method because we used functions keyword after @
-    double? GetAge(DateTime? dateOfBirth){
-        if(dateOfBirth is null)
-        {
-            return null;
-        } else
-        {
-            return  Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
-        }
-    }
-
-    // this is a field
-    int x = 10;
-
-    // Property
-    // string Name { get; set; } = "First app";
-
-    string alertMessage = $"<script>alert('{people.Count} people found')</script>";
-}
 
 <!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>@appTitle</title> 
+        <title>@ViewData["appTitle"]</title> 
         <meta charset="utf-8" />
     </head>
     <body>
-        @Html.Raw(alertMessage)
+      
         @* <h1>@welcomeMessage to @Name</h1> *@
+
+        <h1>@ViewData["welcomeMessage"]</h1>
         
         <div>
-        @for(int i=0; i<people.Count; i++)
+            @{
+                List<Person>? people = (List<Person>)ViewData["people"];
+            }
+        @foreach(Person person in people)
             {
+            
+              
+               
 
-                Person person = people[i];
+              
                 
                 // This wont get treated as C# code anymore
                 @* <span>If it is between html tag it wont get treated as C# code</span> *@
@@ -57,14 +34,12 @@
                 @* <text>Hello TO</text> *@
                 @* @:This is another way to show static text in a block *@
 
-                if (i % 2 != 0)
-                {
-                <p style="color:red;">@person.Name | @GetAge(person.DateOfBirth) years old | @person.PersonGender</p>
+              
+                <p style="color:red;">@person.Name | @person.PersonGender</p>
 
-                } else
-                {
-                <p style="color:blue;">@person.Name | @GetAge(person.DateOfBirth) years old | @person.PersonGender</p>
-                }
+              
+      
+              
 
             }
 
