@@ -5,46 +5,65 @@
 
 
 
-<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>@ViewData["appTitle"]</title> 
         <meta charset="utf-8" />
+        <link href="~/styles.css" rel="stylesheet"/>
     </head>
     <body>
+
+        <div class="page-content">
+
+     
       
         @* <h1>@welcomeMessage to @Name</h1> *@
 
         <h1>@ViewData["welcomeMessage"]</h1>
+        @{
+            List<Person>? people = (List<Person>)ViewData["people"];
+        }
+       
         
-        <div>
-            @{
-                List<Person>? people = (List<Person>)ViewData["people"];
-            }
+       
+        
         @foreach(Person person in people)
             {
-            
+           
+                <div class="box float-left w-50">
+                <h3>@person.Name</h3>
+                   
+
+                    <table class="table w-100">
+                        <tbody>
+                         <tr>
+                             <td>Gender</td>
+                             <td>@person.PersonGender</td>
+                         </tr>
+                         <tr>
+                                <td>Date of Birth</td>
+                                <td>@person.DateOfBirth.Value.ToString("MM/dd/yyyy")</td>
+                         </tr>
+                        </tbody>
+                    </table>
               
+                    
+
+              
+                 </div>
                
-
-              
+            
                 
-                // This wont get treated as C# code anymore
-                @* <span>If it is between html tag it wont get treated as C# code</span> *@
-                @* this is a razor comment *@
-                @* <text>Hello TO</text> *@
-                @* @:This is another way to show static text in a block *@
-
-              
-                <p style="color:red;">@person.Name | @person.PersonGender</p>
-
-              
-      
-              
-
+                
+                        
+             
             }
+      
+
+  
 
 
         </div>
-
     </body>
 </html>

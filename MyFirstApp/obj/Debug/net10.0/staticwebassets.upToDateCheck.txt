@@ -1,4 +1,2 @@
-wwwroot\img.jpg
-wwwroot\docs.pdf
-wwwroot\Sample.txt
-D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\Sample.txt
+wwwroot\styles.css
+D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\wwwroot\styles.css

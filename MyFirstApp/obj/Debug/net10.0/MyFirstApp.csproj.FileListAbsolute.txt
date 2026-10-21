@@ -31,3 +31,4 @@ D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.stat
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cache
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cs
+D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\compressed\1zccl96ajs-{0}-i7dytqqpiw-i7dytqqpiw.gz
