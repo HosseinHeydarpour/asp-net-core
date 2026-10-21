@@ -1,6 +1,6 @@
 ﻿
 @using MyFirstApp.Models
-
+@model List<Person>
 
 
 
@@ -25,11 +25,12 @@
         
         @* Using var when we are using ViewBag is problamatic and the way to fix the problem is too use datatype *@
         @* @foreach (var person in ViewBag.people) *@
-        @foreach(Person person in ViewBag.people)
+        @foreach(Person person in Model)
             {
            
                 <div class="box float-left w-50">
                 <h3>@person.Name</h3>
+             
                    
 
                     <table class="table w-100">
@@ -41,10 +42,12 @@
                          <tr>
                                 <td>Date of Birth</td>
                                 @* ? fixes null problem  *@
+                                @* when ever there is a nullable type use ?. before accessing the peroperty methods *@
                                 <td>@person.DateOfBirth?.ToString("MM/dd/yyyy")</td>
                          </tr>
                         </tbody>
                     </table>
+                    <a href="person-details/@person.Name">Click For Details</a>
               
                     
 

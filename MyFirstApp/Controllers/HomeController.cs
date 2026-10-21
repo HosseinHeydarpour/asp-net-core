@@ -20,7 +20,7 @@ namespace MyFirstApp.Controllers
 
 
             List<Person> people = new List<Person>()
-    {
+            {
                 new Person() { Name = "John", DateOfBirth = Convert.ToDateTime("2000-03-02"), PersonGender=Gender.Male },
                 new Person() { Name = "Pam", DateOfBirth = Convert.ToDateTime("2001-04-22"), PersonGender=Gender.Female },
                 new Person() { Name = "Al", DateOfBirth = null, PersonGender=Gender.Other }
@@ -28,12 +28,48 @@ namespace MyFirstApp.Controllers
 
             ViewData["welcomeMessage"] = "Welcome";
 
-            ViewData["people"] = people;
+            
 
-            return View();  // if ypu do not specify view name it will be : Index.cshtml  --> Views/Home/Index.cshtml expected location - if is not present asp cannot rexognize
+            // instead of using ViewBag or ViewData we send the data as arg in View return
+            // first view name the model object
+            return View("Index",people);  // if ypu do not specify view name it will be : Index.cshtml  --> Views/Home/Index.cshtml expected location - if is not present asp cannot rexognize
             //return View("abc"); // abc.cshtml
 
             
         }
+
+
+        [Route("person-details/{name}")]
+        public IActionResult Details(string? name)
+        {
+            if(name == null)
+            {
+                return BadRequest("Person name cannot be null");
+            }
+
+            List<Person> people = new List<Person>()
+            {
+                new Person() { Name = "John", DateOfBirth = Convert.ToDateTime("2000-03-02"), PersonGender=Gender.Male },
+                new Person() { Name = "Pam", DateOfBirth = Convert.ToDateTime("2001-04-22"), PersonGender=Gender.Female },
+                new Person() { Name = "Al", DateOfBirth = null, PersonGender=Gender.Other }
+            };
+
+            Person? foundPerson = people.Where(p => p.Name == name).FirstOrDefault();
+
+            return View(foundPerson); // Calling Views/Home/Details.cshtml
+
+        }
+
+
+
+    
+    
     }
+
+
+
+    
+
+
+
 }
