@@ -23,7 +23,7 @@ namespace MyFirstApp.Controllers
     {
                 new Person() { Name = "John", DateOfBirth = Convert.ToDateTime("2000-03-02"), PersonGender=Gender.Male },
                 new Person() { Name = "Pam", DateOfBirth = Convert.ToDateTime("2001-04-22"), PersonGender=Gender.Female },
-                new Person() { Name = "Al", DateOfBirth = Convert.ToDateTime("1998-03-12"), PersonGender=Gender.Other }
+                new Person() { Name = "Al", DateOfBirth = null, PersonGender=Gender.Other }
             };
 
             ViewData["welcomeMessage"] = "Welcome";
