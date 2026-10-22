@@ -61,6 +61,28 @@ namespace MyFirstApp.Controllers
         }
 
 
+        [Route("person-with-product")]
+        public IActionResult PersonWithProduct()
+        {
+
+            Person person = new Person() { Name = "Sara", DateOfBirth = Convert.ToDateTime("2000-03-02"), PersonGender = Gender.Male };
+
+            Product product = new Product()
+            {
+                ProductId= 1, 
+                ProductName = "Gamin Mouse"
+            };
+
+
+            PersonAndProductWrapperModel personAndProductWrapperModel = new PersonAndProductWrapperModel
+            {
+                PersonData = person,
+                ProductData = product
+            };
+                
+            return View(personAndProductWrapperModel);
+        }
+
 
     
     

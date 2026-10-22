@@ -20,7 +20,7 @@
       
         @* <h1>@welcomeMessage to @Name</h1> *@
 
-        <h1>@ViewBag.welcomeMessage</h1>
+        <h1>People</h1>
        
         
         @* Using var when we are using ViewBag is problamatic and the way to fix the problem is too use datatype *@
@@ -47,7 +47,11 @@
                          </tr>
                         </tbody>
                     </table>
+                    <div>
                     <a href="person-details/@person.Name">Click For Details</a>
+                    </div>
+                    <br />
+                   
               
                     
 
@@ -61,7 +65,9 @@
              
             }
       
-
+        <div>
+            <a href="/person-with-product">Person with Product</a>
+        </div>
   
 
 
