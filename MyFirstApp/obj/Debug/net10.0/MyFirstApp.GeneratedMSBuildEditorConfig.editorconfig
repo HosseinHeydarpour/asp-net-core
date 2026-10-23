@@ -33,3 +33,15 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/backend/ASP Core .NET/MyFirstApp/MyFirstApp/Views/Home/PersonWithProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJzb25XaXRoUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/backend/ASP Core .NET/MyFirstApp/MyFirstApp/Views/Home/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/backend/ASP Core .NET/MyFirstApp/MyFirstApp/Views/Products/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/backend/ASP Core .NET/MyFirstApp/MyFirstApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
