@@ -84,8 +84,14 @@ namespace MyFirstApp.Controllers
         }
 
 
-    
-    
+        [Route("home/all-products")]
+        public IActionResult All()
+        {
+            return View();
+            // the view will be resolved in two different locations: 1 - Views/Home/All.cshtml  |||  2 - Views/Shared/All.cshtml
+        }
+
+
     }
 
 
