@@ -2,9 +2,9 @@
     ViewData["appTitle"] = "Product Search";
     ViewData["footer"] = "© 2026";
 
-    if (ViewBag.ProductID != null)
+    if (ViewBag.ProductID == null)
     {
-        Layout = "~/Views/Shared/_ProductsLayout.cshtml";
+        Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
    
