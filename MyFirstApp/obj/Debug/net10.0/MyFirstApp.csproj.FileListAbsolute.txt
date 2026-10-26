@@ -32,3 +32,46 @@ D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cache
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cs
 D:\backend\ASP Core .NET\MyFirstApp\MyFirstApp\obj\Debug\net10.0\compressed\1zccl96ajs-{0}-i7dytqqpiw-i7dytqqpiw.gz
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\appsettings.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.staticwebassets.endpoints.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.staticwebassets.runtime.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.exe
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.deps.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.runtimeconfig.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.dll
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.pdb
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.AssemblyInfo.cs
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cs
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.sourcelink.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\scopedcss\bundle\MyFirstApp.styles.css
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.dll
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\refint\MyFirstApp.dll
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.pdb
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.genruntimeconfig.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\ref\MyFirstApp.dll
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\compressed\1zccl96ajs-{0}-rbri7m5bb2-rbri7m5bb2.gz
+C:\Users\User\AppData\Local\Temp\mfa_build_check\appsettings.Development.json
+C:\Users\User\AppData\Local\Temp\mfa_build_check\appsettings.json
+C:\Users\User\AppData\Local\Temp\mfa_build_check\MyFirstApp.staticwebassets.runtime.json
+C:\Users\User\AppData\Local\Temp\mfa_build_check\MyFirstApp.staticwebassets.endpoints.json
+C:\Users\User\AppData\Local\Temp\mfa_build_check\MyFirstApp.exe
+C:\Users\User\AppData\Local\Temp\mfa_build_check\MyFirstApp.deps.json
+C:\Users\User\AppData\Local\Temp\mfa_build_check\MyFirstApp.runtimeconfig.json
+C:\Users\User\AppData\Local\Temp\mfa_build_check\MyFirstApp.dll
+C:\Users\User\AppData\Local\Temp\mfa_build_check\MyFirstApp.pdb
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
