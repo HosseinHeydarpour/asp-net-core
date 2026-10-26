@@ -14,9 +14,12 @@ namespace MyFirstApp.Controllers
 
 
 
-        [Route("/search-products")]
-        public IActionResult Search()
+        [Route("/search-products/{ProductID?}")]
+        public IActionResult Search(int? ProductID)
         {
+
+            ViewBag.ProductID = ProductID;
+
             return View();
         }
 

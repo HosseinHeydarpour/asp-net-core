@@ -82,5 +82,5 @@ C:\Users\User\AppData\Local\Temp\mfa_build_check2\MyFirstApp.deps.json
 C:\Users\User\AppData\Local\Temp\mfa_build_check2\MyFirstApp.runtimeconfig.json
 C:\Users\User\AppData\Local\Temp\mfa_build_check2\MyFirstApp.dll
 C:\Users\User\AppData\Local\Temp\mfa_build_check2\MyFirstApp.pdb
-C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\compressed\1zccl96ajs-{0}-ld5b4z6mq4-ld5b4z6mq4.gz
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
