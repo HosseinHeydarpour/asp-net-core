@@ -15,13 +15,13 @@ namespace MyFirstApp.Controllers
 
 
 
-        [Route("about-company")]
+        [Route("/about-company")]
         public IActionResult About()
         {
             return View();
         }
 
-        [Route("contact-support")]
+        [Route("/contact-support")]
 
         public IActionResult Contact()
         {
