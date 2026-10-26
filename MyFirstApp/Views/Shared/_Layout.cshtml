@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewData["appTitle"]</title>
+    <title>@(ViewData["appTitle"] ?? "Asp.Net Core App")</title>
     <link href="~/styles.css" rel="stylesheet" />
 </head>
 <body>
