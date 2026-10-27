@@ -2,7 +2,6 @@
     ViewBag.Title = "About";
 }
 
-
 <h1>About</h1>
 
 <h2>About company here</h2>
@@ -13,12 +12,11 @@
 
     listModel.ListTitle = "Programming Languages";
     listModel.ListItems = new List<string>()
-        {
-                "Java",
-                "C#",
-                "Python"
-        };
+    {
+        "Java",
+        "C#",
+        "Python"
+    };
 
     await Html.RenderPartialAsync("_ListPartialView", model: listModel);
 }
-

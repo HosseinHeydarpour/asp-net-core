@@ -2,10 +2,8 @@
     ViewBag.Title = "Privacy";
 }
 
-
-<section >
-<h1>Privacy</h1>
-
+<section>
+    <h1>Privacy</h1>
 
     @{
         ListModel listModel = new ListModel();
@@ -13,21 +11,15 @@
         listModel.ListTitle = "Terms";
         listModel.ListItems = new List<string>()
         {
-                "Term 1",                 
-                "Term 2",
-                "Term 3"
+            "Term 1",
+            "Term 2",
+            "Term 3"
         };
     }
 
+    <partial name="_ListPartialView" model="listModel"></partial>
 
-
-<partial name="_ListPartialView" model="listModel"></partial>
-
-
-
-
-@{
-    await Html.RenderPartialAsync("_ListPartialView", model: listModel);
-}
-
+    @{
+        await Html.RenderPartialAsync("_ListPartialView", model: listModel);
+    }
 </section>

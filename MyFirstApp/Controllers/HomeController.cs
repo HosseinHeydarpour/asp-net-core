@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyFirstApp.Models;
 
 
 namespace MyFirstApp.Controllers
@@ -17,7 +18,7 @@ namespace MyFirstApp.Controllers
         }
 
 
-        [Route("Privacy")]
+     
 
         [Route("Home/privacy")]
         public IActionResult Privacy()
@@ -30,6 +31,26 @@ namespace MyFirstApp.Controllers
         public IActionResult About()
         {
             return View();
+        }
+
+
+        [Route("/programming-languages")]
+        public IActionResult ProgrammingLanguages() 
+        {
+            ListModel listModel = new ListModel();
+            listModel.ListTitle = "Programming LANGS";
+            listModel.ListItems = new List<string>()
+            {
+                "C#",
+                "Javascript",
+                "Go",
+                "Rust",
+                "COBOL"
+            };
+
+            return PartialView("_ListPartialView", listModel);
+
+        
         }
     }
 }

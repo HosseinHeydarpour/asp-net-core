@@ -5,29 +5,28 @@
 
 
 
-<section class="home-section">
+<section >
     <h1>Home</h1>
 
- 
+    <button class="button button-blue-back" type="button" id="button-load" >Load Programming Languages</button>
 
-    @{
-        ListModel listModel = new ListModel();
-
-        listModel.ListTitle = "Countries";
-        listModel.ListItems = new List<string>()
-        {
-            "USA",
-            "Canada",
-            "Japan",
-            "Germany",
-            "India"
-        };
-    }
-
- 
-
-    <h3>ListTitle in View: @listModel.ListTitle</h3>
-    <div class="box">
-        <partial name="_ListPartialView" model="listModel"></partial>
+    <div class="box programming-languages-content">
     </div>
+
+
+ 
+    
 </section>
+
+
+<script>
+    button = document.querySelector("#button-load");
+
+    button.addEventListener("click", async function(){
+        var response = await fetch("programming-languages");
+        var languages = await response.text();
+       
+        document.querySelector(".programming-languages-content").innerHTML = languages;
+
+    });
+</script>
