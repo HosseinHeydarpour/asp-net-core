@@ -8,29 +8,26 @@
 <section class="home-section">
     <h1>Home</h1>
 
-    <h3>ListTitle in View: @ViewData["ListTitle"]</h3>
-    <div class="box">
-    <partial name="_ListPartialView"></partial>
-    </div>
+ 
 
     @{
-        var myViewData = new ViewDataDictionary(ViewData);
+        ListModel listModel = new ListModel();
 
-        myViewData["ListTitle"] = "Countries";
-        myViewData["ListItems"] = new List<string>()
+        listModel.ListTitle = "Countries";
+        listModel.ListItems = new List<string>()
         {
-                "USA",
-                "Canada",
-                "Japan",
-                "Germany",
-                "India"
+            "USA",
+            "Canada",
+            "Japan",
+            "Germany",
+            "India"
         };
     }
 
  
 
-    <h3>ListTitle in View: @myViewData["ListTitle"]</h3>
+    <h3>ListTitle in View: @listModel.ListTitle</h3>
     <div class="box">
-        <partial name="_ListPartialView" view-data="myViewData"></partial>
+        <partial name="_ListPartialView" model="listModel"></partial>
     </div>
 </section>

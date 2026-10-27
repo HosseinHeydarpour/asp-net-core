@@ -3,15 +3,15 @@
 }
 
 
-<section class="privacy-section">
+<section >
 <h1>Privacy</h1>
 
 
     @{
-        var myViewData = new ViewDataDictionary(ViewData);
+        ListModel listModel = new ListModel();
 
-        myViewData["ListTitle"] = "Terms";
-        myViewData["ListItems"] = new List<string>()
+        listModel.ListTitle = "Terms";
+        listModel.ListItems = new List<string>()
         {
                 "Term 1",                 
                 "Term 2",
@@ -21,13 +21,13 @@
 
 
 
-<partial name="_ListPartialView" view-data="myViewData"></partial>
+<partial name="_ListPartialView" model="listModel"></partial>
 
 
 
 
 @{
-    await Html.RenderPartialAsync("_ListPartialView", viewData: myViewData);
+    await Html.RenderPartialAsync("_ListPartialView", model: listModel);
 }
 
 </section>
