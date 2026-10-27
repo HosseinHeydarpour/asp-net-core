@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Privacy";
+}
+
+
+<section class="privacy-section">
+<h1>Privacy</h1>
+
+<partial name="_ListPartialView"></partial>
+
+
+
+
+@{
+    await Html.RenderPartialAsync("_ListPartialView");
+}
+
+</section>

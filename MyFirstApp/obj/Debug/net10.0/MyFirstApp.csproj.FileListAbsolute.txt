@@ -27,3 +27,9 @@ C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyF
 C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.pdb
 C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.genruntimeconfig.cache
 C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\ref\MyFirstApp.dll
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\bin\Debug\net10.0\MyFirstApp.staticwebassets.runtime.json
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cache
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\MyFirstApp.RazorAssemblyInfo.cs
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\compressed\1zccl96ajs-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\obj\Debug\net10.0\compressed\0cfqtug9ng-{0}-ev0g547zpy-ev0g547zpy.gz

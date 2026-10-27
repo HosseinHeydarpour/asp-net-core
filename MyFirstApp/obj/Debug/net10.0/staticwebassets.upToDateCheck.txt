@@ -1,0 +1,4 @@
+wwwroot\styles.css
+wwwroot\StyleSheet.css
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\wwwroot\styles.css
+C:\Users\User\Desktop\.net learn with agents\دوره دات نت\MyFirstApp\MyFirstApp\wwwroot\StyleSheet.css
