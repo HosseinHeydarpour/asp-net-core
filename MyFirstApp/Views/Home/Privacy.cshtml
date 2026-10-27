@@ -6,13 +6,28 @@
 <section class="privacy-section">
 <h1>Privacy</h1>
 
-<partial name="_ListPartialView"></partial>
+
+    @{
+        var myViewData = new ViewDataDictionary(ViewData);
+
+        myViewData["ListTitle"] = "Terms";
+        myViewData["ListItems"] = new List<string>()
+        {
+                "Term 1",                 
+                "Term 2",
+                "Term 3"
+        };
+    }
+
+
+
+<partial name="_ListPartialView" view-data="myViewData"></partial>
 
 
 
 
 @{
-    await Html.RenderPartialAsync("_ListPartialView");
+    await Html.RenderPartialAsync("_ListPartialView", viewData: myViewData);
 }
 
 </section>
