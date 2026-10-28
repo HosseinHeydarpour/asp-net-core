@@ -5,21 +5,9 @@
 <section>
     <h1>Privacy</h1>
 
-    @{
-        ListModel listModel = new ListModel();
+    @await Component.InvokeAsync("Grid");
 
-        listModel.ListTitle = "Terms";
-        listModel.ListItems = new List<string>()
-        {
-            "Term 1",
-            "Term 2",
-            "Term 3"
-        };
-    }
 
-    <partial name="_ListPartialView" model="listModel"></partial>
+    <vc:grid></vc:grid>
 
-    @{
-        await Html.RenderPartialAsync("_ListPartialView", model: listModel);
-    }
 </section>
