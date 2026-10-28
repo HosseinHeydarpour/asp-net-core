@@ -17,11 +17,13 @@ namespace MyFirstApp.ViewComponents
             model.PersonList = new List<Person> {
                 new Person() {PersonName="John Doe", JobTitle="Cashier"},
                 new Person() {PersonName="Jane Smith", JobTitle="Analyst"},
-                new Person() {PersonName="John Doe", JobTitle="Cashier"}
+                new Person() {PersonName="John Mop", JobTitle="Data"}
             };
 
-            ViewData["Grid"] = model;
-            return View("Sample");
+            //ViewData["Grid"] = model;
+
+
+            return View("Sample", model);
         }
     }
 }
