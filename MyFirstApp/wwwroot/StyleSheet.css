@@ -444,3 +444,20 @@ a.link-hover:hover
         width: auto;
     }
 }
+
+
+#load-friends-button {
+    background: #e8e8e8;
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+    #load-friends-button:hover {
+        border-radius: 5px;
+        background: black;
+        color: whitesmoke;
+    }

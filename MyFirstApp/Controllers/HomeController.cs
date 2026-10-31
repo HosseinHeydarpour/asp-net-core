@@ -52,5 +52,35 @@ namespace MyFirstApp.Controllers
 
         
         }
+
+
+        [Route("/friends-list")]
+        public IActionResult LoadFriendsList()
+        {
+            PersonGridModel personGridModel = new PersonGridModel()
+            {
+                GridTitle = "Friends",
+                PersonList = new List<Person>()
+                {
+                    new Person()
+                    {
+                        PersonName = "John",
+                        JobTitle = "CEO"
+                    },
+                    new Person()
+                    {
+                        PersonName = "Marry",
+                        JobTitle = "Marketing agent"
+                    },
+                    new Person()
+                    {
+                        PersonName = "Juana",
+                        JobTitle = "Rec"
+                    }
+                }
+            };
+
+            return ViewComponent("Grid", new {  grid= personGridModel });
+        }
     }
 }

@@ -39,36 +39,13 @@
     })
 
 
-    @{
-        PersonGridModel friends = new PersonGridModel()
-        {
-            GridTitle = "Friends",
-            PersonList =
-        {
-        new Person()
-        {
-        PersonName = "John",
-        JobTitle = "From Turkey"
-        },
-        new Person()
-        {
-        PersonName = "Joe ",
-        JobTitle = "From USA"
-        },
-        new Person()
-        {
-        PersonName = "Arya",
-        JobTitle = "From North  "
-        }
-        }
-        };
-    }
-   
-    @await Component.InvokeAsync("Grid", new {
-        grid = friends
-     })
+    
 
+    <button id="load-friends-button">LOAD FRIENDS</button>
+
+    <div id="list" class="list"></div>
  
     
 </section>
 
+<script src="~/js/friends.js"></script>
