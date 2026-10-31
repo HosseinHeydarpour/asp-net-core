@@ -7,23 +7,13 @@ namespace MyFirstApp.ViewComponents
     {
 
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(PersonGridModel grid)
         {
 
-            PersonGridModel model = new PersonGridModel();
-
-            model.GridTitle = "View Component Data";
-
-            model.PersonList = new List<Person> {
-                new Person() {PersonName="John Doe", JobTitle="Cashier"},
-                new Person() {PersonName="Jane Smith", JobTitle="Analyst"},
-                new Person() {PersonName="John Mop", JobTitle="Data"}
-            };
-
-            //ViewData["Grid"] = model;
+      
 
 
-            return View("Sample", model);
+            return View("Sample", grid);
         }
     }
 }

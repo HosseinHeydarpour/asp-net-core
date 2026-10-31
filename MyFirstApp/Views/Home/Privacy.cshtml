@@ -5,9 +5,23 @@
 <section>
     <h1>Privacy</h1>
 
-    @await Component.InvokeAsync("Grid")
+    @{
+        PersonGridModel personGridModel = new PersonGridModel()
+            {
+                GridTitle = "Employees",
+                PersonList = new List<Person>()
+                {
+                    new Person() { PersonName = "Sarath", JobTitle = "Developer" },
+                    new Person() { PersonName = "Srinivas", JobTitle = "UI Developer" },
+                    new Person() { PersonName = "Varun", JobTitle = "Analyst" }
+                }
+            };
+    }
 
 
-    <vc:grid></vc:grid>
+  
+
+
+    <vc:grid grid="personGridModel" />
 
 </section>

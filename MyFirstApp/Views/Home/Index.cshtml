@@ -8,10 +8,65 @@
 <section>
     <h1>Home</h1>
 
-    @await Component.InvokeAsync("Grid")
+    @{
+        PersonGridModel persons = new PersonGridModel()
+            {
+                GridTitle = "People",
+                PersonList =
+                {
+                 new Person()
+                    {
+                    PersonName = "John",
+                    JobTitle = "Date Checker"
+                    },
+                new Person()
+                    {
+                    PersonName = "Joe ",
+                    JobTitle = "CEO"
+                },
+                 new Person()
+                    {
+                    PersonName = "Arya",
+                    JobTitle = "Wrrior  "
+                    }
+                }
+            };
+    }
 
+
+    @await Component.InvokeAsync("Grid", new {
+    grid = persons
+    })
+
+
+    @{
+        PersonGridModel friends = new PersonGridModel()
+        {
+            GridTitle = "Friends",
+            PersonList =
+        {
+        new Person()
+        {
+        PersonName = "John",
+        JobTitle = "From Turkey"
+        },
+        new Person()
+        {
+        PersonName = "Joe ",
+        JobTitle = "From USA"
+        },
+        new Person()
+        {
+        PersonName = "Arya",
+        JobTitle = "From North  "
+        }
+        }
+        };
+    }
    
-    <vc:grid></vc:grid>
+    @await Component.InvokeAsync("Grid", new {
+        grid = friends
+     })
 
  
     
